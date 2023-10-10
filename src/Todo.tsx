@@ -87,6 +87,10 @@ export const Todo = () => {
   //get completed todo count 
   const countCompletedTodos = () => todos.filter((todo: any) => todo.isComplete).length;
 
+  //clear completed
+  const clearCompleted = () => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => !todo.isComplete));
+  };
   return (
     <div className="App">
       <div className="container">
@@ -180,6 +184,21 @@ export const Todo = () => {
                 }
               </div>
           }
+          <div className="actionsBar">
+            <div className="actions">
+              <span className="actionTxt">Clear Completed</span>
+            </div>
+            <div className="actions">
+              <span className="actionTxt">All</span>
+              <span className="actionTxt">Active</span>
+              <span className="actionTxt">Completed</span>
+            </div>
+            <div className="actions">
+              <span className="actionTxt" onClick={()=>{
+                clearCompleted()
+              }}>Clear Completed</span>
+            </div>
+          </div>
         </div>
       </div>
       <div className="love">

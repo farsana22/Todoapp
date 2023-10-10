@@ -93,7 +93,7 @@
 
 .todoDisplayBox {
   border-radius: 10px;
-  height: 24rem;
+  height: auto;
   background-color: #fff;
   flex-direction: column;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -174,7 +174,7 @@ hr {
 }
 
 .todoItemCol {
-  max-height: 20rem;
+  max-height: 18rem;
   overflow-y: auto;
   z-index: 15;
 }
@@ -282,7 +282,7 @@ hr {
   align-items: center;
   justify-content: center;
   display: flex;
-  height: 100%;
+  height: 24rem;
   flex-direction: column;
 }
 
@@ -469,4 +469,26 @@ hr {
   }
 
 
+}
+
+.actionsBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:2rem;
+}
+
+.actions {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+  flex: 4;
+}
+
+.actionTxt {
+  font-size: 10px;
+  font-weight: 600;
+  color: #18411baf;
+  cursor: pointer;
 }
