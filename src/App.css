@@ -14,7 +14,7 @@
 }
 
 *::-webkit-scrollbar-track:hover {
-  background-color: #af59ff;
+  background-color: #10ff247c;
 }
 
 
@@ -85,7 +85,7 @@
 }
 
 .send {
-  color: #AE59FFCC;
+  color: #10ff24;
   font-size: 30px;
   margin-right: 3px;
   cursor: pointer;
@@ -93,7 +93,7 @@
 
 .todoDisplayBox {
   border-radius: 10px;
-  display: flex;
+  height: 24rem;
   background-color: #fff;
   flex-direction: column;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -114,7 +114,7 @@
   width: 100%;
   height: 4rem;
   border-radius: 8px;
-  border-bottom: 1px solid #af59ff6b;
+  border-bottom: 1px solid #10ff24;
 }
 
 .todoItemWrapper {
@@ -127,7 +127,7 @@
 }
 
 .check {
-  color: #AE59FFCC;
+  color: #10ff24;
   cursor: pointer;
 }
 
@@ -151,7 +151,7 @@
 hr {
   border: none;
   height: 1px;
-  background-color: #af59ff6b;
+  background-color: #10ff24;
 }
 
 .love {
@@ -170,11 +170,249 @@ hr {
   justify-content: center;
   margin-left: 3px;
   border-radius: 35%;
-  background-color: #AE59FFCC;
+  background-color: #10ff24;
 }
 
 .todoItemCol {
   max-height: 20rem;
   overflow-y: auto;
   z-index: 15;
+}
+
+.loginWrap {
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  height: 70%;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  /* border:1px solid #af59ff; */
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.loginItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.loginTitle {
+  color: rgb(0, 211, 0);
+  font-size: 2rem;
+}
+
+.loginInput,
+.loginBtn {
+  width: 80%;
+  height: 2.5rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 0.2rem;
+}
+
+.loginBtn {
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 3.5rem;
+  background-color: #10ff24;
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.loginInput {
+  background-color: #75ff5933;
+}
+
+.loginInput::placeholder {
+  letter-spacing: 1.5px;
+}
+
+.navHigh {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.nav {
+  font-weight: 300;
+}
+
+.noData {
+  height: 10rem;
+}
+
+.noDataCol {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.dataMsg {
+  font-weight: 200;
+}
+
+@media only screen and (max-width: 767px) {
+  .container {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./assets/bg.png');
+    z-index: -1;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .todowrapper {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .title {
+    color: #FFF;
+    font-family: Plus Jakarta Sans;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .todoDisplayBox {
+    border-radius: 10px;
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.02);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .todoItem {
+    width: 100%;
+    height: 4.2rem;
+    border-radius: 5px;
+    border-bottom: 1px solid #af59ff17;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .infoItem {
+    font-size: 11px;
+    font-weight: 500;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .todoItemWrapper {
+    display: flex;
+    margin: 0px 10px;
+    justify-content: space-between;
+    gap: 1rem;
+    height: 100%;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .love {
+    position: absolute;
+    bottom: -40px;
+    font-size: 10px;
+    font-weight: 300;
+
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .todoTime {
+    font-size: 8.5px;
+    font-weight: 400;
+  }
+
+  .todoTitle {
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+
+.titleBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 767px) {
+  .love {
+    position: absolute;
+    bottom: -40px;
+    font-size: 10px;
+    font-weight: 300;
+
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .createdList {
+    padding: 2px 3px;
+    max-width: 20px;
+    min-width: 10px;
+    display: flex;
+    font-size: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2px;
+    border-radius: 35%;
+    color: #fff;
+    background-color: #AE59FFCC;
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  .noDataCol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 26rem;
+    min-height: 15rem;
+    justify-content: center;
+  }
+}
+
+.logout {
+  border: none;
+  background-color: #10ff24;
+  font-weight: 800;
+  color: #fff;
+  padding: 0.7rem;
+  cursor: pointer;
+  border-radius: 10px;
 }
