@@ -1,10 +1,11 @@
 import './App.css';
-import TodoPage from './Pages/TodoPage/TodoPage';
+import { Todo } from './Todo';
+
 
 
 function App() {
   return (
-  <TodoPage/>
+  <Todo/>
 )
 
 }

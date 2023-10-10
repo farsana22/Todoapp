@@ -7,6 +7,8 @@ interface todoType {
     isComplete: boolean | undefined;
   }
 
+  export const Todo = () => {
+
   const [todos, setTodos] = useState<todoType[]>([]);
   const [todo, setTodo] = useState<string>("");
   const [todoStatus, setTodoStatus] = useState<boolean>();
@@ -74,7 +76,7 @@ interface todoType {
 
 
 
-export const Todo = () => {
+
   return (
         <div className="App">
           <div className="container">
