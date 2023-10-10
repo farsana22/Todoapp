@@ -219,7 +219,7 @@ hr {
     overflow-y: auto;
     z-index: 15;
   }
-  
+
 }
 
 .loginItem {
@@ -500,4 +500,13 @@ hr {
   font-weight: 600;
   color: #18411baf;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 767px) {
+  .actionTxt {
+    font-size: 9px;
+    font-weight: 500;
+    color: #18411baf;
+    cursor: pointer;
+  }
 }
