@@ -142,10 +142,12 @@
 
 .todoTitle {
   font-size: 17px;
+  font-weight: 500;
 }
 
 .todoTime {
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 300;
 }
 
 hr {
