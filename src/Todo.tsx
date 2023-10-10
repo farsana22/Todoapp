@@ -41,8 +41,8 @@ export const Todo = () => {
   }
 
   function addTodo() {
-    if ("") {
-      console.error("Error")
+    if (todo === "") {
+      toast.error("Please enter something!")
     }
     else {
       const newTodo = {
