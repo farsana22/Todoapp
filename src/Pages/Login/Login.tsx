@@ -3,14 +3,14 @@ import TextField from '@mui/material/TextField';
 import { CircularProgress, InputAdornment } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useState, ChangeEvent, FormEvent, useEffect } from 'react';
-// import { toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import axios from 'axios';
 
 interface TodoLoginProps {
-    getMode: (data: string) => void;
+   
 }
 
-const TodoLogin: React.FC<TodoLoginProps> = ({ getMode }) => {
+const TodoLogin: React.FC<TodoLoginProps> = () => {
 
     const [visible, setVisible] = useState(false)
     const [username, setUsername] = useState('')
@@ -68,7 +68,7 @@ const TodoLogin: React.FC<TodoLoginProps> = ({ getMode }) => {
             <div className="todo-login-component">
                 <div className="todo-login-left">
                     <div className="todo-login">
-                        <img src={login} alt="" className="todo-login-image" />
+                        {/* <img src={login} alt="" className="todo-login-image" /> */}
                     </div>
                 </div>
                 <hr className="vertical-hr " />
@@ -124,7 +124,7 @@ const TodoLogin: React.FC<TodoLoginProps> = ({ getMode }) => {
                                     </div>
                                 }
                                 <div className="login-input-row">
-                                    <span className="sign-nav">New user ? <span className="sign-high" onClick={() => getMode('signup')}>SIGN-UP</span></span>
+                                    <span className="sign-nav">New user ? <span className="sign-high" >SIGN-UP</span></span>
                                 </div>
                             </div>
                         </div>

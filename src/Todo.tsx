@@ -7,12 +7,9 @@ interface todoType {
     isComplete: boolean | undefined;
   }
 
- const TodoPage = () => {
   const [todos, setTodos] = useState<todoType[]>([]);
   const [todo, setTodo] = useState<string>("");
   const [todoStatus, setTodoStatus] = useState<boolean>();
-
-  console.log(setTodoStatus)
 
   const generateUniqueId = () => {
     return new Date().getTime().toString();
@@ -73,6 +70,11 @@ interface todoType {
 
   //get completed todo count 
   const countCompletedTodos = () => todos.filter((todo:any) => todo.isComplete).length;
+
+
+
+
+export const Todo = () => {
   return (
         <div className="App">
           <div className="container">
@@ -167,6 +169,3 @@ interface todoType {
         </div>
   )
 }
-
-
-export default TodoPage;

@@ -1,5 +1,6 @@
 import './App.css';
-import { TodoPage } from './Pages/TodoPage/TodoPage';
+import TodoPage from './Pages/TodoPage/TodoPage';
+
 
 function App() {
   return (
