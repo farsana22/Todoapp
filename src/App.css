@@ -213,6 +213,13 @@ hr {
     /* border:1px solid #af59ff; */
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
   }
+
+  .todoItemCol {
+    max-height: 24rem;
+    overflow-y: auto;
+    z-index: 15;
+  }
+  
 }
 
 .loginItem {

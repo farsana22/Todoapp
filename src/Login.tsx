@@ -45,7 +45,7 @@ function Login() {
                             e.preventDefault();
                             setUsername(e.target.value);
                         }} />
-                        <input value={password} type="text" className="loginInput" placeholder='Password' onChange={(e) => {
+                        <input value={password} type="password" className="loginInput" placeholder='Password' onChange={(e) => {
                             e.preventDefault();
                             setPassword(e.target.value);
                         }} />
