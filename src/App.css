@@ -5,12 +5,12 @@
 }
 
 *::-webkit-scrollbar {
-  width: 7px;
+  width: 5px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #af59ff6b;
-  border-radius: 6px;
+  background-color: #00ff1552;
+  border-radius: 5px;
 }
 
 *::-webkit-scrollbar-track:hover {
@@ -282,7 +282,7 @@ hr {
   align-items: center;
   justify-content: center;
   display: flex;
-  height: 24rem;
+  height: 20rem;
   flex-direction: column;
 }
 
@@ -475,7 +475,7 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  height:2rem;
+  height: 2rem;
 }
 
 .actions {

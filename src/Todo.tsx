@@ -14,8 +14,7 @@ export const Todo = () => {
 
   const [todos, setTodos] = useState<todoType[]>([]);
   const [todo, setTodo] = useState<string>("");
-  const [todoStatus, setTodoStatus] = useState<boolean>(false);
-  console.log(setTodoStatus)
+  const [todoStatus] = useState<boolean>(false);
 
   const user = localStorage.getItem('isUserLoggedIn');
 
@@ -67,6 +66,12 @@ export const Todo = () => {
     countCompletedTodos()
   };
 
+  //get all todos
+  const AllTodos = () => {
+    const storedTodos = JSON.parse(localStorage.getItem('todos') || '[]');
+    setTodos(storedTodos)
+  }
+
 
   //update the status of the todo
   const handleCompletion = (index: any) => {
@@ -90,7 +95,42 @@ export const Todo = () => {
   //clear completed
   const clearCompleted = () => {
     setTodos((prevTodos) => prevTodos.filter((todo) => !todo.isComplete));
+    const storedTodos = JSON.parse(localStorage.getItem('todos') || '[]');
+    const updatedTodos = storedTodos.filter((todo: { isComplete: any; }) => !todo.isComplete);
+    console.log(updatedTodos.length)
+    if (updatedTodos.length === 0) {
+      toast.error("You haven't anything to remove")
+    }
+    localStorage.setItem('todos', JSON.stringify(updatedTodos));
+    AllTodos();
   };
+
+  //clear all
+  const clearAll = () => {
+    localStorage.removeItem('todos');
+    const storedTodos = JSON.parse(localStorage.getItem('todos') || '[]');
+    setTodos(storedTodos)
+  };
+
+
+  //get active todos
+  const activeTodos = () => {
+    const storedTodos = JSON.parse(localStorage.getItem('todos') || '[]');
+    const active = storedTodos.filter((todo: { isComplete: any; }) => !todo.isComplete);
+    setTodos(active);
+  }
+
+  //get completed
+  const getCompletedTodos = () => {
+    const storedTodos = JSON.parse(localStorage.getItem('todos') || '[]');
+    const active = storedTodos.filter((todo: { isComplete: any; }) => todo.isComplete);
+    if (active.length === 0) {
+      toast.error("You haven't completed any todo!")
+    } else {
+      setTodos(active);
+    }
+  };
+
   return (
     <div className="App">
       <div className="container">
@@ -113,7 +153,7 @@ export const Todo = () => {
           </span>
         </div>
         <div className="todoDisplayBox">
-          {todos.length != 0 &&
+          {todos.length !== 0 ?
             <div >
               <div className="info">
                 <div className="infoWrapper">
@@ -125,6 +165,7 @@ export const Todo = () => {
               </div>
               <hr />
             </div>
+            : <></>
           }
 
           {
@@ -184,21 +225,29 @@ export const Todo = () => {
                 }
               </div>
           }
-          <div className="actionsBar">
+          {todos.length !== 0 && <div className="actionsBar">
             <div className="actions">
-              <span className="actionTxt">Clear Completed</span>
+              <span className="actionTxt" onClick={() => {
+                clearAll()
+              }}>Clear All</span>
             </div>
             <div className="actions">
-              <span className="actionTxt">All</span>
-              <span className="actionTxt">Active</span>
-              <span className="actionTxt">Completed</span>
+              <span className="actionTxt" onClick={() => {
+                AllTodos();
+              }}>All</span>
+              <span className="actionTxt" onClick={() => {
+                activeTodos();
+              }}>Active</span>
+              <span className="actionTxt" onClick={() => {
+                getCompletedTodos();
+              }}>Completed</span>
             </div>
             <div className="actions">
-              <span className="actionTxt" onClick={()=>{
+              <span className="actionTxt" onClick={() => {
                 clearCompleted()
               }}>Clear Completed</span>
             </div>
-          </div>
+          </div>}
         </div>
       </div>
       <div className="love">
