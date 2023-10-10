@@ -1,0 +1,180 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Plus Jakarta Sans;
+}
+
+*::-webkit-scrollbar {
+  width: 7px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #af59ff6b;
+  border-radius: 6px;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #af59ff;
+}
+
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.container {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 45vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('./assets/bg.png');
+  z-index: -1;
+}
+
+.bgimg {
+  width: 100%;
+  height: 100%;
+}
+
+.todowrapper {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.title {
+  color: #FFF;
+  font-family: Plus Jakarta Sans;
+  font-size: 3.025rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.inputBox {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 9%;
+}
+
+.todoinput {
+  width: 90%;
+  padding: 0.5rem;
+  display: inline;
+  outline: none;
+  border: none;
+  font-size: 17px;
+}
+
+.send {
+  color: #AE59FFCC;
+  font-size: 30px;
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+.todoDisplayBox {
+  border-radius: 10px;
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.info {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.infoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.todoItem {
+  width: 100%;
+  height: 4rem;
+  border-radius: 8px;
+  border-bottom: 1px solid #af59ff6b;
+}
+
+.todoItemWrapper {
+  display: flex;
+  margin: 0px 15px;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 100%;
+  align-items: center;
+}
+
+.check {
+  color: #AE59FFCC;
+  cursor: pointer;
+}
+
+.todoDetails {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 5px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.todoTitle {
+  font-size: 17px;
+}
+
+.todoTime {
+  font-size: 12px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #af59ff6b;
+}
+
+.love {
+  position: absolute;
+  bottom: 10px;
+  font-size: 13px;
+}
+
+.createdList {
+  padding: 2px 5px;
+  max-width: 25px;
+  min-width: 15px;
+  display: flex;
+  font-size: 13px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3px;
+  border-radius: 35%;
+  background-color: #AE59FFCC;
+}
+
+.todoItemCol {
+  max-height: 20rem;
+  overflow-y: auto;
+  z-index: 15;
+}
