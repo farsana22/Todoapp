@@ -72,16 +72,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 9%;
 }
 
 .todoinput {
-  width: 90%;
-  padding: 0.5rem;
+  width: 85%;
+  padding: 15px;
   display: inline;
   outline: none;
   border: none;
   font-size: 17px;
+  border-radius: 50%;
 }
 
 .send {
@@ -114,7 +114,7 @@
   width: 100%;
   height: 4rem;
   border-radius: 8px;
-  border-bottom: 1px solid #10ff24;
+  border-bottom: 1px solid #10ff2463;
 }
 
 .todoItemWrapper {
@@ -151,7 +151,7 @@
 hr {
   border: none;
   height: 1px;
-  background-color: #10ff24;
+  background-color: #10ff2471;
 }
 
 .love {
@@ -170,7 +170,7 @@ hr {
   justify-content: center;
   margin-left: 3px;
   border-radius: 35%;
-  background-color: #10ff24;
+  background-color: #2dff3e86;
 }
 
 .todoItemCol {
@@ -187,12 +187,30 @@ hr {
   height: 70%;
   top: 50%;
   left: 50%;
-  width: 30%;
+  width: 35%;
   align-items: center;
   justify-content: center;
   display: flex;
   /* border:1px solid #af59ff; */
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (max-width: 767px) {
+  .loginWrap {
+    background-color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    /* border:1px solid #af59ff; */
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .loginItem {
@@ -207,6 +225,13 @@ hr {
 .loginTitle {
   color: rgb(0, 211, 0);
   font-size: 2rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .loginTitle {
+    color: rgb(0, 211, 0);
+    font-size: 1.5rem;
+  }
 }
 
 .loginInput,
@@ -257,8 +282,25 @@ hr {
   align-items: center;
   justify-content: center;
   display: flex;
+  height: 100%;
   flex-direction: column;
 }
+
+@media only screen and (max-width: 767px) {
+  .loginBtn {
+    padding: 0.7rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 3rem;
+    background-color: #10ff24;
+    font-weight: 600;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
 
 .dataMsg {
   font-weight: 200;
@@ -294,11 +336,11 @@ hr {
 
 @media only screen and (max-width: 767px) {
   .title {
-    color: #FFF;
+    color: #fff;
     font-family: Plus Jakarta Sans;
     font-size: 1.8rem;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 800;
     line-height: normal;
     text-transform: uppercase;
   }
@@ -319,7 +361,7 @@ hr {
     width: 100%;
     height: 4.2rem;
     border-radius: 5px;
-    border-bottom: 1px solid #af59ff17;
+    border-bottom: 1px solid #10ff2463;
   }
 }
 
@@ -344,7 +386,7 @@ hr {
 @media only screen and (max-width: 767px) {
   .love {
     position: absolute;
-    bottom: -40px;
+    bottom: -5px;
     font-size: 10px;
     font-weight: 300;
 
@@ -391,10 +433,20 @@ hr {
     margin-left: 2px;
     border-radius: 35%;
     color: #fff;
-    background-color: #AE59FFCC;
+    background-color: #2dff3e86;
   }
 }
 
+
+.logout {
+  border: none;
+  background-color: #00d312;
+  font-weight: 800;
+  color: #fff;
+  padding: 0.7rem;
+  cursor: pointer;
+  border-radius: 10px;
+}
 
 @media only screen and (max-width: 767px) {
   .noDataCol {
@@ -405,14 +457,16 @@ hr {
     min-height: 15rem;
     justify-content: center;
   }
-}
 
-.logout {
-  border: none;
-  background-color: #10ff24;
-  font-weight: 800;
-  color: #fff;
-  padding: 0.7rem;
-  cursor: pointer;
-  border-radius: 10px;
+  .logout {
+    border: none;
+    background-color: #00d312;
+    font-weight: 400;
+    color: #fff;
+    padding: 0.3rem;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+
 }

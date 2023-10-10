@@ -11,6 +11,7 @@ function Signin() {
     const handleSignup = () => {
         const user = { username, password };
         localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('isUserLoggedIn', JSON.stringify(false));
         toast.success("Signup Successfull!")
         toast.success("Please Login to continue.")
         navigate('/login')

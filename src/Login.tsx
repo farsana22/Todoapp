@@ -13,6 +13,7 @@ function Login() {
         if (user) {
             const storedUser = JSON.parse(user);
             if (username === storedUser.username && password === storedUser.password) {
+                localStorage.setItem('isUserLoggedIn',JSON.stringify(true));
                 toast.success('Login successful');
                 navigate('/')
                 setUsername("")

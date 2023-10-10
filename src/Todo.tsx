@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import nothingImg from './assets/nodata.png'
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 interface todoType {
   id: string;
@@ -14,10 +16,20 @@ export const Todo = () => {
   const [todo, setTodo] = useState<string>("");
   const [todoStatus, setTodoStatus] = useState<boolean>(false);
   console.log(setTodoStatus)
-  
+
+  const user = localStorage.getItem('isUserLoggedIn');
+
+  useEffect(() => {
+    if (!user) {
+      navigate('/login');
+    }
+  }, [])
+
   const generateUniqueId = () => {
     return new Date().getTime().toString();
   }
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem('todos') || '[]');
@@ -75,10 +87,6 @@ export const Todo = () => {
   //get completed todo count 
   const countCompletedTodos = () => todos.filter((todo: any) => todo.isComplete).length;
 
-
-
-
-
   return (
     <div className="App">
       <div className="container">
@@ -86,7 +94,13 @@ export const Todo = () => {
       <div className="todowrapper">
         <div className="titleBox">
           <span className="title">Todo</span>
-          <button className='logout'>Logout</button>
+          <button className='logout' onClick={() => {
+            localStorage.setItem('isUserLoggedIn', JSON.stringify(false))
+            setTimeout(() => {
+              toast.success("Logout Successful")
+              navigate('/login')
+            }, 400);
+          }}>Logout</button>
         </div>
         <div className="inputBox">
           <input type="text" className='todoinput' onChange={(e: any) => handleChange(e)} value={todo} placeholder='Add a new task' />
