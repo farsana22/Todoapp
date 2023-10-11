@@ -94,15 +94,15 @@ export const Todo = () => {
 
   //clear completed
   const clearCompleted = () => {
-    setTodos((prevTodos) => prevTodos.filter((todo) => !todo.isComplete));
     const storedTodos = JSON.parse(localStorage.getItem('todos') || '[]');
     const updatedTodos = storedTodos.filter((todo: { isComplete: any; }) => !todo.isComplete);
-    console.log(updatedTodos.length)
-    if (updatedTodos.length === 0) {
+    if (updatedTodos) {
+      localStorage.setItem('todos', JSON.stringify(updatedTodos));
+      AllTodos();
+      setTodos((prevTodos) => prevTodos.filter((todo) => !todo.isComplete));
+    } else {
       toast.error("You haven't anything to remove")
     }
-    localStorage.setItem('todos', JSON.stringify(updatedTodos));
-    AllTodos();
   };
 
   //clear all
@@ -117,7 +117,11 @@ export const Todo = () => {
   const activeTodos = () => {
     const storedTodos = JSON.parse(localStorage.getItem('todos') || '[]');
     const active = storedTodos.filter((todo: { isComplete: any; }) => !todo.isComplete);
-    setTodos(active);
+    if (active.length === 0) {
+      toast.error("There is no active Todos!")
+    } else {
+      setTodos(active);
+    }
   }
 
   //get completed
